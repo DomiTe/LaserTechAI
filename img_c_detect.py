@@ -18,11 +18,11 @@ y1 = 600#1000
 x2 = 700#800
 y2 = 800#500
 
-#put a square on the stream were the "hit range should be"
+#put a square on the picture were the "hit range should be"
 crop_img = image[y1:y2, x1:x2].copy()
 cv2.rectangle(image,(x1,y1),(x2,y2),(0,255,0),3)
 
-#resize img so it diesnt fill up the screen :>
+#resize img so it doesnt fill up the screen :>
 resized_down = cv2.resize(crop_img, down_points, interpolation= cv2.INTER_LINEAR)
 resized_down2 = cv2.resize(image, down_points, interpolation= cv2.INTER_LINEAR)
 
@@ -30,13 +30,13 @@ resized_down2 = cv2.resize(image, down_points, interpolation= cv2.INTER_LINEAR)
 cv2.imwrite(r'C:\Users\ZowieQuickert\Documents\Hm\boop\test.jpg',crop_img)
 
 #Show Pictures for test purpose
-#cv2.imshow("test" ,resized_down)
-#cv2.imshow("test2" ,resized_down2)
+cv2.imshow("test" ,resized_down)
+cv2.imshow("test2" ,resized_down2)
 
-#cv2.waitKey(0)  
+cv2.waitKey(0)  
 
 # Destroys all the windows created
-#cv2.destroyAllwindows() 
+cv2.destroyAllwindows() 
 
 # endregion
 
@@ -85,7 +85,7 @@ def is_image_mostly_blue(image, threshold=95):
     total_pixel_count = image.shape[0] * image.shape[1]
     blue_percentage = (blue_pixel_count / total_pixel_count) * 100
     
-    # Überprüfe, ob der Prozentsatz der roten Pixel mindestens dem Schwellenwert entspricht
+    # Überprüfe, ob der Prozentsatz der blauen Pixel mindestens dem Schwellenwert entspricht
     print(blue_percentage >= threshold)
     return blue_percentage >= threshold
 
